@@ -1,130 +1,40 @@
-# Changelog
+﻿# 更新日志
 
-All notable changes to this package will be documented in this file.
+> 此文件记录了该软件包所有重要的变更
+> 文件格式基于 [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 更新日志规范，且此项目版本号遵循 [语义化版本](http://semver.org/spec/v2.0.0.html) 规范
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+## [3.3.0] - 2025-10-30
+### 新增
+- **`JsonHelper`**: 添加了 `JsonConfigLoader<T>` 抽象基类，通过继承并重写 `FilePathInStreamingAssets` 属性，可以快速实现从 `StreamingAssets` 自动加载配置数据的功能
+- **`JsonHelper`**: 添加了 `SingleTonJsonConfigLoader<T>` 抽象基类，为单例管理器提供了一个集成了自动加载 JSON 配置功能的便捷选项
 
-## [3.2.1] - 2023-04-27
+### 更改
+- **项目结构**: 将 `DataCollection.cs` 和 `Enums.cs` 中的示例数据修改为更通用的模板，以减少在新项目中的冲突
 
-* Fixed Newtonsoft DLL when compiling with netstandard 2.0.
+## [3.2.0] - 2025-07-24
+### 新增
+- **`JsonHelper`**: 添加了 `SaveToStreamingAssets` 和 `LoadFromStreamingAssets` 两个包装函数，简化了常用的对 `StreamingAssets` 文件夹的读写操作
+- **`Singleton`**: `Instance` 属性现在会在实例为空时，自动调用 `FindFirstObjectByType<T>()` 在场景中查找现有实例，增强了代码的健壮性
 
-## [3.2.0] - 2023-04-19
+### 更改
+- **项目结构**: 将核心的 `Singleton.cs` 和 `JsonHelper.cs` 脚本移动到包的 `Runtime` 目录下，使其可以作为 UPM 包被其他模块依赖
 
-* Fixed Newtonsoft DLL public key token so it properly supports assembly strong name.
-* Support Newtonsoft's `JsonSelectSettings.RegexMatchTimeout`.
+## [3.1.0] - 2025-06-11
+### 新增
+- **`JsonHelper`**: 添加了 GZip 压缩与解压缩功能。现在 `Save` 和 `Load` 方法可以通过 `compress` 参数支持对大型 JSON 数据进行压缩，以减小文件体积
+- **`JsonHelper`**: 添加了 `SaveToPersistent` 和 `LoadFromPersistent` 两个包装函数，用于在 `Application.persistentDataPath` 路径下快速读写文件
 
-## [3.1.0] - 2023-02-28
+## [3.0.0] - 2025-05-22
+### 新增
+- **`JsonHelper`**: 初始版本发布，提供了一套基于 `Newtonsoft.Json` 的静态方法，用于将数据结构序列化为 JSON 文件或从文件中反序列化
 
-* Updated AOT and Editor DLLs to corresponds to Newtonsoft.Json version 13.0.2
+## [2.0.0] - 2025-03-07
+### 移除
+- **项目结构**: 删除了不再使用的 `Constant.cs` 文件
 
-## [3.0.2] - 2022-03-29
-
-* Removed test code from package.
-
-## [3.0.1] - 2022-02-21
-
-* Updated license file
-
-## [3.0.0] - 2022-01-27
-
-* Updated Documentation
-
-## [3.0.0-preview.1] - 2022-01-25
-
-* Updated AOT and Editor DLLs to corresponds to Newtonsoft.Json version 13.0.1
-* Removed deprecated Portable DLL
-* Updated README
-* Updated Documentation
-
-## [2.0.2] - 2020-10-04
-
-* Updated README
-* Added package signature for validation
-
-## [2.0.1-preview.1] - 2020-11-14
-
-* Updated README and Internal Fixtures
-
-## [2.0.0] - 2020-04-20
-
-### This is the release of *Unity Package Nuget.NewtonsoftJson* v2.0.0.
-
-* Updated dll to AOT compatible version to allow for IL2CPP compilation platform targets
-* Added dll to Portable compatible version to allow for additional platform targets
-* Updated associated Package Documents
-
-## [2.0.0-preview] - 2019-11-14
-
-### This is the preview of *Unity Package Nuget.NewtonsoftJson* v2.0.0-preview.
-
-* Changed dll to AOT compatible version to allow for IL2CPP compilation platform targets
-
-## [1.1.2] - 2019-10-31
-
-### This is the release of *Unity Package Nuget.NewtonsoftJson* v1.1.2.
-
-* Fixed tests for 2018.4.
-
-## [1.1.1] - 2019-10-30
-
-### This is the release of *Unity Package Nuget.NewtonsoftJson* v1.1.1.
-
-* Added some sanity tests to catch issues in the CI.
-
-## [1.1.0] - 2019-10-29
-
-### This is the release of *Unity Package Nuget.NewtonsoftJson* v1.1.0.
-
-* Use .net standard 2.0 version of the dll.
-* Renamed the dll to match the assembly name. Users will need to update their assembly references.
-
-## [1.1.0-preview.1] - 2019-08-09
-
-### This is the first preview of *Unity Package Nuget.Newtonsoft.Json* version 1.1.0.
-
-* Updated to bug fix release 12.0.2 of Newtonsoft Json.
-* Updated package description.
-
-## [1.0.1-preview.2] - 2019-10-02
-
-### This is the second preview release of *Unity Package Nuget.NewtonsoftJson* v1.0.1.
-
-* Use .net standard 2.0 version of the dll.
-
-## [1.0.1-preview.1] - 2019-08-13
-
-### This is the first preview release of *Unity Package Nuget.Newtonsoft.Json* v1.0.1.
-
-* Renamed the dll to match the assembly name. Users will need to update their assembly references.
-
-## [1.0.0] - 2019-08-08
-
-### This is the first release of *Unity Package Nuget.Newtonsoft.Json*.
-
-* No notable changes from the previous preview release.
-
-## [1.0.0-preview.4] - 2019-08-06
-
-### This is the fourth preview release of *Unity Package Nuget.Newtonsoft.Json*.
-
-* Remove the unused asmdef file and make it such that the dll needs to be explicitly included.
-
-## [1.0.0-preview.3] - 2019-07-03
-
-### This is the third preview release of *Unity Package Nuget.Newtonsoft.Json*.
-
-* Update the documentation for the package and the package description to state that this package is for internal Unity
-  use __only__.
-
-## [1.0.0-preview.2] - 2019-06-21
-
-### This is the second preview release of *Unity Package Nuget.NewtonsoftJson*.
-
-* The name of the package has been changed to avoid a naming issue with npm.
-
-## [1.0.0-preview.1] - 2019-06-21
-
-### This is the first preview release of *Unity Package Nuget.NewtonsoftJson*.
-
-* This is the first preview of a the custom Unity package for NewtonsoftJson. Please report any bugs.
+## [1.0.0] - 2024-05-02
+### 新增
+- **初始版本发布**: 提供了项目常用的核心模块
+- **`Singleton`**: 提供了泛型单例模式基类 `Singleton<T>`
+- **`EventHandler`**: 提供了一个静态的全局事件中心，用于低耦合的模块间通信
+- **`DataCollection` / `Enums`**: 提供了存放通用数据结构和枚举的模板文件

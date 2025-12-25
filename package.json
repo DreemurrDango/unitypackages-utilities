@@ -1,19 +1,28 @@
 ﻿{
   "name": "com.dreemurrstudio.utilities",
   "version": "3.3.0",
-  "displayName": "通用中枢",
-  "description": "核心功能模块，中大型项目中常用的核心模块，包括JSON读取、数据结构集合、枚举集合、事件转发中心",
-  "unity": "2021.3",
+  "displayName": "通用中枢模块",
+  "description": "为 Unity 项目提供一套基础工具和常用设计模式的集合，包含泛型单例、JSON读写帮助类以及事件中心等模板。",
   "author": {
     "name": "DreemurrStudio",
     "email": "3011090456@qq.com",
-    "url": "https://www.dreemurrstudio.com"
+    "url": "https://gitee.com/RoastDango"
   },
   "keywords": [
-    "General",
-    "Centre",
-    "EventHandle",
-    "DataCollection",
-    "JSON"
+    "Utilities",
+    "Helper",
+    "Json",
+    "Singleton",
+    "Event"
+  ],
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "核心定义文件 (EventHandler, Enums, DataCollection)",
+      "description": "包含项目通用的事件中心、枚举和数据结构模板文件。如需要请导入后在 Assets 文件夹中进行修改",
+      "path": "Samples~/Utilities"
+    }
   ]
 }
