@@ -1,0 +1,19 @@
+﻿{
+  "name": "com.dreemurrstudio.utilities",
+  "version": "3.3.0",
+  "displayName": "通用中枢",
+  "description": "核心功能模块，中大型项目中常用的核心模块，包括JSON读取、数据结构集合、枚举集合、事件转发中心",
+  "unity": "2021.3",
+  "author": {
+    "name": "DreemurrStudio",
+    "email": "3011090456@qq.com",
+    "url": "https://www.dreemurrstudio.com"
+  },
+  "keywords": [
+    "General",
+    "Centre",
+    "EventHandle",
+    "DataCollection",
+    "JSON"
+  ]
+}
