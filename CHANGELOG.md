@@ -1,7 +1,10 @@
 ﻿# 更新日志
 
-> 此文件记录了该软件包所有重要的变更
-> 文件格式基于 [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 更新日志规范，且此项目版本号遵循 [语义化版本](http://semver.org/spec/v2.0.0.html) 规范
+> 此文件记录了该软件包所有重要的变更，文件格式基于 [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 更新日志规范，且此项目版本号遵循 [语义化版本](http://semver.org/spec/v2.0.0.html) 规范
+
+## [3.3.1] - 2025-12-26]
+### 修复
+- **`ScriptCollection`**: 不再使用样本导入的方式将DataCollection.cs和Enums.cs复制到项目中，改为打包成unitypackage文件，放在包目录下 
 
 ## [3.3.0] - 2025-10-30
 ### 新增

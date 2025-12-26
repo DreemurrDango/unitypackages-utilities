@@ -31,9 +31,7 @@
 
 1.  通过 Unity 包管理器从 Git URL 或本地路径添加此包
 2.  **导入核心定义文件**:
-    *   打开菜单 `Window > Package Manager`
-    *   在包列表中找到并选中 **通用中枢模块 (Utilities Module)**
-    *   在右侧的详情面板中，找到 "Samples" 区域，点击 **核心定义文件** 旁边的 **Import** 按钮
+    *   在包目录下，找到名为 `ScriptCollection` 的unitypackage文件，双击将其导入到你的项目中
     *   这会将 `EventHandler.cs`, `Enums.cs` 和 `DataCollection.cs` 等模板文件复制到您项目的 `Assets/Utilities` 文件夹中。您可以在此路径下安全地修改它们以适应您的项目需求
 
 ### 2. `Singleton` 用法

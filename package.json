@@ -1,6 +1,6 @@
 ﻿{
   "name": "com.dreemurrstudio.utilities",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "displayName": "通用中枢模块",
   "description": "为 Unity 项目提供一套基础工具和常用设计模式的集合，包含泛型单例、JSON读写帮助类以及事件中心等模板。",
   "author": {
@@ -18,11 +18,9 @@
   "dependencies": {
     "com.unity.nuget.newtonsoft-json": "3.0.0"
   },
-  "samples": [
-    {
-      "displayName": "核心定义文件 (EventHandler, Enums, DataCollection)",
-      "description": "包含项目通用的事件中心、枚举和数据结构模板文件。如需要请导入后在 Assets 文件夹中进行修改",
-      "path": "Samples~/Utilities"
-    }
-  ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DreemurrDango/unitypackages-utilities.git",
+    "revision": "master"
+  }
 }
