@@ -1,6 +1,6 @@
 ﻿{
   "name": "com.dreemurrstudio.utilities",
-  "version": "3.3.1",
+  "version": "3.4.0",
   "displayName": "通用中枢模块",
   "description": "为 Unity 项目提供一套基础工具和常用设计模式的集合，包含泛型单例、JSON读写帮助类以及事件中心等模板。",
   "author": {

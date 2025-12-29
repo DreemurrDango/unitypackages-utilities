@@ -13,9 +13,10 @@
     *   内置对 `Application.persistentDataPath` 和 `Application.streamingAssetsPath` 两个常用路径的快捷读写方法
 *   **自动配置加载器**:
     *   提供 `JsonConfigLoader<T>` 和 `SingleTonJsonConfigLoader<T>` 两个抽象基类，继承它们即可轻松实现从 `StreamingAssets` 中加载配置文件
-*   **项目定义模板 (Samples)**:
+*   **项目模板库**:包文件下的Models.unitypackage包含了以下模板文件，导入后（将导入到`Assets/Scripts/Models`目录下） 将可根据项目需求进行修改
     *   **`EventHandler`**: 一个静态的全局事件中心模板，用于实现模块间的低耦合通信
     *   **`Enums` / `DataCollection`**: 用于集中定义项目中所有通用枚举和数据结构的模板文件
+*   **主线程调度器**: 提供 `UnityMainThreadDispatcher`，可以安全地将网络线程中接收到的任务（如更新UI）调度到 Unity 主线程执行
 
 ---
 

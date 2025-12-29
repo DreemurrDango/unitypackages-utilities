@@ -2,6 +2,13 @@
 
 > 此文件记录了该软件包所有重要的变更，文件格式基于 [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) 更新日志规范，且此项目版本号遵循 [语义化版本](http://semver.org/spec/v2.0.0.html) 规范
 
+## [3.4.0] - 2025-12-29
+### 新增
+- **主线程调度器 (`UnityMainThreadDispatcher`)**: 新增了一个线程安全的 `UnityMainThreadDispatcher` 单例类。它允许您从任何后台线程（如网络接收线程）中安全地将任务（如更新UI、操作GameObject）调度到 Unity 的主线程上执行
+
+### 更改
+- ** 将DataCollection 、Enums.cs、EventHandler移动到Scripts/Models目录下，使其更符合项目结构规范，便于管理和查找核心数据结构和枚举定义
+
 ## [3.3.1] - 2025-12-26]
 ### 修复
 - **`ScriptCollection`**: 不再使用样本导入的方式将DataCollection.cs和Enums.cs复制到项目中，改为打包成unitypackage文件，放在包目录下 
