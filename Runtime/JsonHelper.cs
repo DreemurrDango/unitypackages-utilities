@@ -248,7 +248,14 @@ namespace Utilities
         /// <summary>
         /// 获取单例实例
         /// </summary>
-        public static SingleTonJsonConfigLoader<T> Instance => _instance ??= FindFirstObjectByType<SingleTonJsonConfigLoader<T>>();
+        public static SingleTonJsonConfigLoader<T> Instance
+        {
+            get
+            {
+                if(_instance == null)_instance = GameObject.FindFirstObjectByType<SingleTonJsonConfigLoader<T>>();
+                return _instance;
+            }
+        }
 
         /// <summary>
         /// 确保单例，若继承应当放在最前

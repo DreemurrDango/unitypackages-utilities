@@ -13,7 +13,14 @@ public class Singleton<T> : MonoBehaviour where T:Singleton<T>
     /// <summary>
     /// 获取单例实例
     /// </summary>
-    public static T Instance => _instance ??= FindFirstObjectByType<T>();
+    public static T Instance
+    {
+        get
+        {
+            if (_instance == null) _instance = GameObject.FindFirstObjectByType<T>();
+            return _instance;
+        }
+    }
 
     /// <summary>
     /// 确保单例，若继承应当放在最前
