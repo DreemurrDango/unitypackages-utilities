@@ -252,7 +252,7 @@ namespace Utilities
         {
             get
             {
-                if(_instance == null)_instance = GameObject.FindFirstObjectByType<SingleTonJsonConfigLoader<T>>();
+                if(_instance == null)_instance = FindObjectOfType<SingleTonJsonConfigLoader<T>>();
                 return _instance;
             }
         }
