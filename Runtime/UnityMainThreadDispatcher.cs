@@ -25,14 +25,14 @@ namespace DreemurrStudio.Utilities
         /// 获取UnityMainThreadDispatcher的一个实例。
         /// </summary>
         /// <returns>单例实例。</returns>
-        public static UnityMainThreadDispatcher Instance()
+        public static UnityMainThreadDispatcher Instance(bool autoFind = true,bool autoCreate = true)
         {
-            if (_instance == null)
+            if (_instance == null && autoFind)
             {
                 // 在场景中寻找一个已存在的实例
                 _instance = FindObjectOfType<UnityMainThreadDispatcher>();
 
-                if (_instance == null)
+                if (_instance == null && autoCreate)
                 {
                     // 如果没有实例存在，则创建一个新的GameObject并添加此分发器组件
                     GameObject dispatcherObject = new GameObject("UnityMainThreadDispatcher");
